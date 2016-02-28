@@ -1,7 +1,7 @@
 <?php namespace Pushman\PHPLib;
 
 use GuzzleHttp\Client;
-use GuzzleHttp\Message\Response;
+use GuzzleHttp\Psr7\Response;
 use Pushman\PHPLib\Exceptions\InvalidChannelException;
 use Pushman\PHPLib\Exceptions\InvalidConfigException;
 use Pushman\PHPLib\Exceptions\InvalidDeleteRequestException;
@@ -82,7 +82,7 @@ class Pushman {
         $url = $this->getURL();
 
         $headers = [
-            'body' => [
+            'form_params' => [
                 'private'  => $this->privateKey,
                 'channels' => $channels,
                 'event'    => $event,
