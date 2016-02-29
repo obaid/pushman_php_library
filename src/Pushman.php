@@ -109,7 +109,7 @@ class Pushman {
         $url = $this->getURL('channel');
 
         $headers = [
-            'body' => [
+            'form_params' => [
                 'private' => $this->privateKey,
                 'channel' => $channel
             ]
@@ -143,7 +143,7 @@ class Pushman {
         $url = $this->getURL('channels');
 
         $headers = [
-            'body' => [
+            'form_params' => [
                 'private' => $this->privateKey
             ]
         ];
@@ -167,7 +167,7 @@ class Pushman {
         $url = $this->getURL('channel');
 
         $headers = [
-            'body' => [
+            'form_params' => [
                 'private'   => $this->privateKey,
                 'channel'   => $channels,
                 'max'       => $max,
@@ -199,7 +199,7 @@ class Pushman {
         $url = $this->getURL('channel');
 
         $headers = [
-            'body' => [
+            'form_params' => [
                 'private' => $this->privateKey,
                 'channel' => $channels
             ]
@@ -242,7 +242,7 @@ class Pushman {
     private function processGetParams($headers)
     {
         $paramStrings = [];
-        foreach ($headers['body'] as $key => $value) {
+        foreach ($headers['form_params'] as $key => $value) {
             $paramStrings[] = $key . "=" . $value;
         }
         $paramString = "?";
